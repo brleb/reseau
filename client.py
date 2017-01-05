@@ -13,10 +13,10 @@ def handle(tmp, server) :
     code = tmp[0]
 
     if (code == WELCOME) :
-        print("Bienvenue sur le jeu du morpion aveugle.")
+        print("Bienvenue sur le jeu du morpion version aveugle.")
 
     if (code == START) :
-        print("La partie va commencer.")
+        print("En attente d'un adversaire")
 
     if (code == PLAY) :
         grille = tmp[1]
