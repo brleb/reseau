@@ -16,7 +16,7 @@ def handle(tmp, server) :
         print("Bienvenue sur le jeu du morpion version aveugle.")
 
     if (code == START) :
-        print("En attente d'un adversaire")
+        print("En attente d'un adversaire !")
 
     if (code == PLAY) :
         grille = tmp[1]
