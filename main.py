@@ -3,7 +3,7 @@
 from grid import *
 from macro import *
 
-def main(listeJoueur):
+def solo(listeJoueur):
 
     grids = [grid(), grid(), grid()]
     current_player = J1
