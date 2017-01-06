@@ -8,7 +8,7 @@ import pickle
 import time
 
 from macro import *
-from main import main
+from main import *
 from grid import *
 
 listeSocket = []
