@@ -29,16 +29,16 @@ while(1):
     clients, _ , _ = select.select(listeSocket, [], [])
     for i in clients:
         if (i == serverSocket):
-            new_socket, adresse = serverSocket.accept()
-            listeSocket.append(new_socket)
+            newSocket, adresse = serverSocket.accept()
+            listeSocket.append(newSocket)
             nbJoueur = nbJoueur + 1
             print("Clients connectés : " + str(nbJoueur))
 
         if (len(listeJoueur) < 2) :
-            listeJoueur.append(new_socket)
+            listeJoueur.append(newSocket)
 
         if (len(listeJoueur) > 2) :
-            listeSpec.append(new_socket)
+            listeSpec.append(newSocket)
 
         if (len(listeJoueur) == 2) :
             print("La partie va commencer")

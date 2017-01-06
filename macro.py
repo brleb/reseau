@@ -2,6 +2,7 @@
 
 import pickle
 #Pour chaque code un message est attribué dans le client
+#Utilisé par le client et le main
 WELCOME =   10
 START   =   11
 PLAY    =   12

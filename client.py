@@ -2,13 +2,14 @@
 
 from grid import *
 from macro import *
+from solo import *
 
 import sys
 import socket
 import select
 import pickle
 
-def handle(tmp, server) :
+def gestion(tmp, server) :
 
     code = tmp[0]
 
@@ -46,6 +47,10 @@ def handle(tmp, server) :
     if (code == END) :
         print("Parti terminée.")
 
+if(len(sys.argv)==1):
+    solo()
+    exit()
+
 host = "::1"
 port = int(sys.argv[1])
 
@@ -53,11 +58,11 @@ s = socket.socket(socket.AF_INET6, socket.SOCK_STREAM, 0, None)
 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
 s.connect((host, port))
 s.setblocking(True)
-print("Connexion au port " + str(7777))
+print("Connexion au port 7777")
 
 while True :
     clients, _ , _ = select.select([s], [], [])
     for sock in clients :
         msg = sock.recv(1024)
         tmp = pickle.loads(msg)
-        handle(tmp, sock)
+        gestion(tmp, sock)
